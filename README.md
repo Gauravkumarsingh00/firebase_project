@@ -48,11 +48,13 @@ This project is a Node.js web application integrated with Firebase Firestore to 
 
 ### GET `/api/users`
 
-- **Description:** Fetches all users from Firestore and displays them in a table -**Response:** A list of users in JSON format.
+- **Description:** Fetches all users from Firestore and displays them in a table
+- **Response:** A list of users in JSON format.
 
 ### GET `/api/users/create`
 
-- **Description:** Show the user creation form. -**Response:** A form to input user details (Name, Age, Role).
+- **Description:** Show the user creation form.
+- **Response:** A form to input user details (Name, Age, Role).
 
 ### POST `/api/users/create`
 
@@ -70,26 +72,30 @@ This project is a Node.js web application integrated with Firebase Firestore to 
 ### GET `/api/users/update-form/:id`
 
 - **Description:** Fetches the user by ID to update their details.
-- **Parameters:** `id`:The ID of the user to fetch. -**Response:**Displays the form prefilled with the user’s data for editing.
+- **Parameters:** `id`:The ID of the user to fetch.
+- **Response:**Displays the form prefilled with the user’s data for editing.
 
 ### POST `/api/users/update/:id`
 
 - **Description:** Updates the user details.
 - **Parameters:** `id`:The ID of the user to update.
 - **Request Body:**
+
   ```json
   {
     "name": "Updated Name",
     "age": 25,
     "role": "Updated Role"
   }
-  -**Response:**Redirects to `/api/users`.
   ```
+
+- **Response:**Redirects to `/api/users`.
 
 ### DELETE `/api/users/delete/:id`
 
 - **Description:** Deletes a user from Firestore.
-- **Parameters:** `id`:The ID of the user to delete. -**Response:**A success message confirming deletion.
+- **Parameters:** `id`:The ID of the user to delete.
+- **Response:**A success message confirming deletion.
 
 ---
 
