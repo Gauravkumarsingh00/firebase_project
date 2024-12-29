@@ -73,7 +73,7 @@ This project is a Node.js web application integrated with Firebase Firestore to 
 
 - **Description:** Fetches the user by ID to update their details.
 - **Parameters:** `id`:The ID of the user to fetch.
-- **Response:**Displays the form prefilled with the user’s data for editing.
+- **Response:** Displays the form prefilled with the user’s data for editing.
 
 ### POST `/api/users/update/:id`
 
@@ -89,13 +89,13 @@ This project is a Node.js web application integrated with Firebase Firestore to 
   }
   ```
 
-- **Response:**Redirects to `/api/users`.
+- **Response:** Redirects to `/api/users`.
 
 ### DELETE `/api/users/delete/:id`
 
 - **Description:** Deletes a user from Firestore.
 - **Parameters:** `id`:The ID of the user to delete.
-- **Response:**A success message confirming deletion.
+- **Response:** A success message confirming deletion.
 
 ---
 
