@@ -39,14 +39,22 @@ This project is a Node.js web application integrated with Firebase Firestore to 
    ```
 6. Open the application in your browser:
    ```plaintext
-   http://localhost:3000
+   http://localhost:4000
    ```
 
 ---
 
 ## API Endpoints
 
-### POST `/api/create`
+### GET `/api/users`
+
+- **Description:** Fetches all users from Firestore and displays them in a table -**Response:** A list of users in JSON format.
+
+### GET `/api/users/create`
+
+- **Description:** Show the user creation form. -**Response:** A form to input user details (Name, Age, Role).
+
+### POST `/api/users/create`
 
 - **Description:** Adds a new user to Firestore
 - **Request Body:**
@@ -59,9 +67,29 @@ This project is a Node.js web application integrated with Firebase Firestore to 
   ```
 - **Response:** Redirects to `/api/users`
 
-### GET `/api/users`
+### GET `/api/users/update-form/:id`
 
-- **Description:** Fetches all users from Firestore and displays them in a table
+- **Description:** Fetches the user by ID to update their details.
+- **Parameters:** `id`:The ID of the user to fetch. -**Response:**Displays the form prefilled with the user’s data for editing.
+
+### POST `/api/users/update/:id`
+
+- **Description:** Updates the user details.
+- **Parameters:** `id`:The ID of the user to update.
+- **Request Body:**
+  ```json
+  {
+    "name": "Updated Name",
+    "age": 25,
+    "role": "Updated Role"
+  }
+  -**Response:**Redirects to `/api/users`.
+  ```
+
+### DELETE `/api/users/delete/:id`
+
+- **Description:** Deletes a user from Firestore.
+- **Parameters:** `id`:The ID of the user to delete. -**Response:**A success message confirming deletion.
 
 ---
 
@@ -69,14 +97,18 @@ This project is a Node.js web application integrated with Firebase Firestore to 
 
 ### 1. **`index.ejs`**
 
+Home page Bootstrap-styled contain a users list button.
+
+### 2. **`userForm.ejs`**
+
 Form for submitting user data:
 
 - Fields: Name, Age, Role
 - Styled using Bootstrap
 
-### 2. **`users.ejs`**
+### 3. **`users.ejs`**
 
-Displays all users in a Bootstrap-styled table with columns for ID, Name, Age, and Role.
+Displays all users in a Bootstrap-styled table with columns for ID, Name, Age, and Role with edit and delete button.
 
 ---
 
