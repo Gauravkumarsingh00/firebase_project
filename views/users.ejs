@@ -13,7 +13,7 @@
     <div class="container mt-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Users List</h1>
-        <a href="/api/create" class="btn btn-success">Create User</a>
+        <a href="/api/users/create" class="btn btn-success">Create User</a>
       </div>
 
       <table class="table table-striped">
@@ -54,12 +54,12 @@
     </div>
     <script>
       function updateUser(userId) {
-        window.location.href = `/api/update-form/${userId}`;
+        window.location.href = `/api/users/update-form/${userId}`;
       }
 
       function deleteUser(userId) {
         if (confirm('Are you sure you want to delete this user?')) {
-          fetch(`/api/delete/${userId}`, {
+          fetch(`/api/users/delete/${userId}`, {
             method: 'DELETE',
           })
             .then((response) => response.json())

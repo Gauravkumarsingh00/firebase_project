@@ -13,7 +13,7 @@
     <div class="container mt-5">
       <h1><%= user ? "Update User" : "Create User" %></h1>
       <form
-        action="<%= user ? `/api/update/${user.id}` : '/api/create' %>"
+        action="<%= user ? `/api/users/update/${user.id}` : '/api/users/create' %>"
         method="POST"
       >
         <div class="mb-3">
