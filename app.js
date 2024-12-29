@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('', routes);
+app.use('api/', routes);
 
 app.get('/', (req, res) => {
   res.render('index');

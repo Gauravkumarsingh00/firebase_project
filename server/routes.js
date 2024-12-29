@@ -10,7 +10,7 @@ router.post('/create', async (req, res) => {
 
     await addDoc(Users, { name, age, role });
 
-    res.redirect('/users');
+    res.redirect('/api/users');
   } catch (error) {
     console.error('Error adding user:', error);
     res.status(500).send({ msg: 'Error adding user', error: error.message });
