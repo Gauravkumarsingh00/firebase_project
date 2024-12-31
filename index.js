@@ -6,6 +6,7 @@ const routes = require('./server/routes');
 const app = express();
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // Explicitly set the views directory
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -18,7 +19,5 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
-);
+// Export the app for Vercel
+module.exports = app;
